@@ -1,0 +1,11 @@
+#Команда для запуска hub-а
+java -jar selenium-server-standalone-3.141.59.jar -role hub
+
+#Команда для запуска node
+java -jar selenium-server-standalone-3.141.59.jar -role webdriver -hub http://localhost:4444/grid/register -port 5556
+
+#Команда для запуска теста и формирования файлов Allure для отчета
+pytest --alluredir results
+
+#Команда для формирования и запуска отчета Allure
+allure serve results
